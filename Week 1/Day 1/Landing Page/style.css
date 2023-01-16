@@ -1,0 +1,24 @@
+#sign{
+    color: white;
+   margin-right: 50px;
+    margin-top: 5px;
+}
+#sign:hover{
+    background-color:white;
+    color: rgb(8, 123, 224);
+}
+button{
+    background-color: rgb(8, 123, 224);
+    padding: 10px 24px;
+    border: none;
+    border-radius:8px;
+    text-decoration-color: white;
+    text-decoration: white;
+    transition-duration: 0.4s;
+}
+body{
+    background-image: url("https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+   background-attachment: fixed;  
+}

@@ -1,0 +1,31 @@
+span{
+    background-color: yellow;
+}
+ol{
+list-style-type: upper-roman;
+}
+#Media{
+    text-align: center;
+}
+img{
+
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        border: 4px solid orangered;
+        height: 500px;
+        width: 500px;
+    }
+    #Difference{
+        color: orangered;
+        border: 4px solid orangered;
+        background-color: transparent;
+    }
+    h5{
+        text-align: center;
+    }
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }

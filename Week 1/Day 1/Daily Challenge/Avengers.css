@@ -1,0 +1,26 @@
+body{
+    background-image: url("Thor.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+   background-attachment: fixed;
+}
+
+body{
+    font-family: 'Archivo Black', sans-serif;
+}
+h1{
+    color: black;
+    font-size: 60px;
+    margin-left: 70px;
+   margin-top: 250px;
+}
+
+img{
+    width: 120px;
+}
+#thor{
+    color: black;
+    margin-right: 1000px;
+    margin-left: 70px;
+    font-family: 'Poppins', sans-serif;
+}
