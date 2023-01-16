@@ -24,3 +24,48 @@ img{
     margin-left: 70px;
     font-family: 'Poppins', sans-serif;
 }
+
+@media screen and (min-width: 600px)and (max-width:768px ){
+    h1{
+        font-size: 35px;
+    }
+    .container-fluid{
+        background-color: yellow;
+    }
+    .navbar-inverse .navbar-nav>li>a {
+        color: rgb(0, 0, 0);
+    }
+    }
+
+@media screen and (min-width: 768px)and (max-width: 992px){
+    h1{
+        font-size: 25px;
+    }
+    .container-fluid{
+        background-color: lightgreen;
+    }
+    .navbar-inverse .navbar-nav>li>a {
+        color: rgb(0, 0, 0);
+    }
+}
+@media screen and (min-width: 992px)and (max-width:1200px ){
+    .container-fluid{
+        background-color: red;
+    }
+    .navbar-inverse .navbar-nav>li>a {
+        color:white
+    }
+    #busy{ 
+        display: flex;
+        align-items: flex-start;
+        
+    }
+}
+@media screen and (min-width: 1200px){
+    .container-fluid{
+        background-color: rgb(0, 0, 0);
+    }
+    .navbar-inverse .navbar-nav>li>a {
+        color: #ffffff;
+    }
+}
