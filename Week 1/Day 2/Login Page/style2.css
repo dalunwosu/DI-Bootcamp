@@ -1,0 +1,139 @@
+.form__wrapper{
+    display: flex;
+    width: 800px;
+  }
+  .form__left{
+    width: 400px;
+    background-color: #F5F5F5;
+  }
+  .form__email, .form__password, .form__btn{
+    display: block;
+    width: 280px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 10px 0px;
+    background-color: #DCDCDC;
+    border: none;
+  }
+  
+  .form__title{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700px;
+  }
+  input::placeholder{
+    padding-left: 10px;
+    font-size: 14px;
+  }
+  .checkbox{
+    margin-left: 55px;
+    margin-bottom: 40px;
+  }
+  span{
+    display: inline-block;
+  
+    width: 115px;
+  }
+  .checkbox_span{
+    margin-left: 42px;
+  }
+  .form_par{
+    margin: 0 auto;
+    width: 120px;
+    text-align: center;
+    font-size: 18px;
+    color: grey;
+    padding: 0px 10px;
+    margin-bottom: 30px;
+    position: relative;
+  }
+  .form_par::after{
+    content: " ";
+    width: 60px;
+    height: 1px;
+    background-color:grey;
+    position: absolute;
+    top: 50%;
+    right: -70px;
+  }
+  .form_par::before{
+    content: " ";
+    width: 60px;
+    height: 1px;
+    background-color:grey;
+    position: absolute;
+    top: 50%;
+    left: -70px;
+  }
+  
+  
+  
+  
+  .form__social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin-bottom: 40px;
+    margin-right: 20px;
+  }
+  .form__social img {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+  }
+  
+  .form_copyright-text{
+    text-align: center;
+    color: grey;
+    margin-bottom: 10px;
+  }
+  .form__btn{
+    background-color: #A629C2;
+    color: white;
+    font-weight: bold;
+    border: none;
+  }
+  .form__right{
+    background-image: linear-gradient(	#4B0082, #BA55D3);
+  }
+  .form__right-icon{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  .form__right-title{
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+  }
+  .form__right-text{
+    width: 400px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-top: -30px;
+  }
+  .form__right-btn_icon img{
+    width: 25px;
+    height: 25px;
+  }
+  .form__right-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 30px;
+    border: 1px solid white;
+    width: 150px;
+    margin: 0 auto;
+     margin-top: 30px;
+     border-radius: 20px;
+  }
+  .form__right-btn_text a{
+    padding-right: 5px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
