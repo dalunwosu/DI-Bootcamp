@@ -11,13 +11,8 @@ div{
     margin: 1px;
     display: grid;
     grid-template-columns: repeat(15,2fr);
-    /* grid-template-rows: 1fr 1fr 1fr; */
-    /* border: 2px solid blue; */
     height: 100vh;
-    width: fit-content
-    
-    
-    ;
+    width: fit-content;
     box-sizing: border-box;
     border: 1px solid black;
   }
