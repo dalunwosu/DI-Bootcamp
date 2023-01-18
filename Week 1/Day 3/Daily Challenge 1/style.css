@@ -5,6 +5,7 @@
   section{
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
+   border: 2px solid black;
   }
   
   .left{
@@ -31,4 +32,3 @@
     height: 100px;
     width: 100px;
   }
-  

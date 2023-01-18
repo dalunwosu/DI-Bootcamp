@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+
+}
+div{
+    border: 2px white solid;
+    height: 30px;
+    width: 30px;
+  }
+  .design{
+    margin: 1px;
+    display: grid;
+    grid-template-columns: repeat(15,2fr);
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    /* border: 2px solid blue; */
+    height: 100vh;
+    width: fit-content
+    
+    
+    ;
+    box-sizing: border-box;
+    border: 1px solid black;
+  }
+  
+  .pattern{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* border: 2px solid blue; */
+    height: auto;
+    width: fit-content;
+  }
+  .cream{
+    background-color: #ffb26d;
+  }
+  .orange{
+    background-color: #ff7100;
+  }
+  .brown{
+    background-color: #a84a00;
+  }
+    
