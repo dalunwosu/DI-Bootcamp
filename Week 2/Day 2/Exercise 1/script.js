@@ -27,21 +27,6 @@ const question = prompt("Pick between an apple, pear or Banana").toLowerCase();
 const value= userCart["prices"][question]
 console.log(`The price of ${question} is ${value} dollars`)
 
-
-let grade = prompt("Enter your grade:");
-
-if (grade > 90) {
-  console.log("A");
-} else if (grade >= 80 && grade <= 90) {
-  console.log("B");
-} else if (grade >= 70 && grade < 80) {
-  console.log("C");
-} else if (grade < 70) {
-  console.log("D");
-}
-
-
-
 // 1. Add the lastname Smith to the object
 // 2. Change the username from John to Tom
 // 2. Change the price of the pear, so it will include the Taxes. (17% is 0.17)
