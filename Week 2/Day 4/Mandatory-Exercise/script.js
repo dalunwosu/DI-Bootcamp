@@ -117,18 +117,18 @@ function hotelCost(){
 
 function planeRideCost(){
 let plane = prompt("What is your Destination?").toLowerCase
-while(typeof plane !== "string" || plane === null){
+while(typeof plane !== "string" || plane === null|| !isNaN(plane)){
     plane = prompt("Please enter a valid destination")
 }
-if (plane == "london"){
+if (plane === "london"){
     console.log(`your flight is $183` )
     return 183
 }
-else if (plane == "paris"){
+else if (plane === "paris"){
     console.log(`your flight is $220`)
     return 220
 }
-else if (plane !== "london" && plane !== "paris"){
+else if (plane !== "london" || plane !== "paris"){
     console.log(`your flight is $300`)
     return 300
 }
@@ -138,7 +138,7 @@ else if (plane !== "london" && plane !== "paris"){
 function rentalCarCost(){
     let car = prompt("How many days would you like to rent a car?")
     while(isNaN(car) || car === null)(
-        console.log("Please enter a valid number of days")
+        car = prompt("Please enter a valid number of days")
     )
     let cost = car * 40 
     if(car>10){
