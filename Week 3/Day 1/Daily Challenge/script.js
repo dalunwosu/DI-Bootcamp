@@ -1,6 +1,6 @@
-const planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
+const planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune","Pluto"];
 
-const planetColors = ["rgb(255, 153, 153)", "rgb(255, 255, 102)", "rgb(153, 255, 153)", "rgb(204, 153, 255)", "rgb(255, 102, 153)", "rgb(255, 204, 153)", "rgb(102, 153, 255)", "rgb(102, 255, 153)"];
+const planetColors = ["#1a1a1a", " #e6e6e6", "#2f6a69", "#993d00", "#b07f35", "#b08f36", "#5580aa", "#366896","#f6ddbd"];
 
 const listPlanets = document.getElementsByClassName("listPlanets")[0];
 
@@ -11,3 +11,4 @@ for (let i = 0; i < planets.length; i++) {
   planetDiv.innerHTML = planets[i];
   listPlanets.appendChild(planetDiv);
 }
+
