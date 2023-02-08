@@ -1,6 +1,8 @@
 import random
 # Exercise 1
 # Way 1
+
+
 def display_message():
     reason = "I am learning Python in this course"
     return reason
@@ -121,10 +123,12 @@ heat = get_random_temp()
 # print(heat)
 
 
-def main(): 
+def main():
     temp = get_random_temp()
     print(f"The temperature right now is {temp} degrees Celsius.")
 # main()
+
+
 def main():
     temp = get_random_temp()
     print(f"The temperature right now is {temp} degrees Celsius.")
@@ -138,17 +142,21 @@ def main():
         print("The weather is perfect! Go outside and have sonme fun")
     elif 32 <= temp <= 40:
         print("The weather is quite hot, don't don't forget to stay hydrated")
+
+
 main()
+
 
 def get_random_temp(season):
     if season == "winter":
         return random.randint(-10, 16)
     elif season == "autumn" or season == "fall":
-        return random.randint(16,23)
+        return random.randint(16, 23)
     elif season == "spring":
-        return random.randint(24,32)
+        return random.randint(24, 32)
     elif season == "summer":
-        return random.randint(32,40)
+        return random.randint(32, 40)
+
 
 def main():
     season = input("Give me a season of the year: ").lower()
@@ -164,4 +172,6 @@ def main():
         print("The weather is perfect! Go outside and have some fun")
     elif 32 <= temp <= 40:
         print("The weather is quite hot, don't don't forget to stay hydrated")
+
+
 main()
