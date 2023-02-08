@@ -60,23 +60,20 @@ print(brand["number_stores"]) #The value changed from 2 to 10,000, meaning it pr
 #Exercise 4
 users = ["Mickey","Minnie","Donald","Ariel","Pluto"]
 disney_users_A = {}
-i = 0
-for user in users:
+
+for i, user in enumerate(users):
     disney_users_A[user] = i
-    i += 1
-n = 0
+
 print(disney_users_A)
 disney_users_B = {}
-for user in users:
+for n, user in enumerate(users):
     disney_users_B[n] = user
-    n += 1
 print(disney_users_B)
-j = 0
+
 disney_users_C = {} 
 
-for user in sorted(users) : 
+for j,user in enumerate(sorted(users)) : 
     disney_users_C[user] = j
-    j += 1
 print(disney_users_C)
 
 disney_users_D = {}
