@@ -1,0 +1,8 @@
+sentence = input("Give words separated by a comma: ")
+print(sentence)
+line = sentence.split(",")
+print(line)
+arrange = sorted(line)
+print(arrange)
+together = ",".join(arrange)
+print(together)
