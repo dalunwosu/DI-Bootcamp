@@ -60,12 +60,48 @@ class Song:
             print(line)
 stairway= Song(["There's a lady who's sure","all that glitters is gold", "and she's buying a stairway to heaven"])
 stairway.sing_me_a_song()
-chamber_of_reflections = Song(["Spend some time away","Getting ready for the day you're born again","Spend some time alone","Understand that soon you'll run with better men",
-"Alone again","Alone again","Alone again","Alone again","Alone","No use looking out","It's within that brings that lonely feeling","Understand that when you leave here, you'll be clear",
-"Among the better men","Alone again","Alone again","Alone again","Alone again","Alone","Alone again","Alone again","Alone again","Alone"])
-chamber_of_reflections.sing_me_a_song()
 
 #Exercise 4
 class Zoo:
     def __init__(self,zoo_name):
-        
+        self.animals = []
+        self.zoo_name = zoo_name
+    def add_animal(self,new_animal):
+        if new_animal not in self.animals:
+            self.animals.append(new_animal)
+        else:
+            print(f"{new_animal} is already in the zoo")
+        print(self.animals)
+    def get_animals(self):
+        animal = " ,".join(self.animals)
+        print(animal)
+    def sell_animal(self,animal_sold):
+        if animal_sold in self.animals:
+            self.animals.remove(animal_sold)
+        else:
+            print(f"{animal_sold} is not in the zoo")
+        print(self.animals)
+    def sort_animals(self):
+        animal_dict = {}
+        for animal in sorted(self.animals):
+            first_letter = animal[0]
+            if first_letter in animal_dict:
+                animal_dict[first_letter].append(animal)
+            else  :
+                animal_dict[first_letter] = [animal]
+        return animal_dict
+    def get_groups(self):
+        animal_dict = self.sort_animals()
+        for letter, animals in animal_dict.items():
+            animal_str = ", ".join(animals)
+            print(f"{letter}: {animal_str}")
+    
+ramat_gan_safari = Zoo("Dalu's Zoo")   
+ramat_gan_safari.animals = ["Lion","Elephant","Giraffe","Gorilla","Tiger","Monkey","Alligator","Aardvark","Horse","Zebra"]
+ramat_gan_safari.add_animal("Cheetah")
+ramat_gan_safari.add_animal("Lion")
+ramat_gan_safari.get_animals()
+ramat_gan_safari.sell_animal("Horse")
+ramat_gan_safari.sell_animal("Turtle")
+ramat_gan_safari.sort_animals()
+ramat_gan_safari.get_groups()
