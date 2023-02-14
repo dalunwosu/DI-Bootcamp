@@ -5,7 +5,7 @@ class PetDog(Dog):
         super().__init__(name, age, weight)
         self.trained = False
     def train(self):
-        self.bark()
+        print(self.bark())
         self.trained = True
     def play(self,*dog_names):
         print(f"{self.name}, {dog_names} all play together")
@@ -13,6 +13,8 @@ class PetDog(Dog):
         tricks = [f"{self.name} does a barrel roll",f"{self.name} stands on his back legs",f"{self.name} shakes your hand",f"{self.name} plays dead"]
         if self.trained is True:
             print(random.choice(tricks))
+        else:
+            print(f"{self.name} is not trained")
 Tommy = PetDog("Tommy",6,15)
 Tommy.train()
 Tommy.play("Becky","Cruz","Ripper","Ronny","Fred")

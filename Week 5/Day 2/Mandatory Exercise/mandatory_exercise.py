@@ -27,15 +27,15 @@ class Chartreux(Cat):
 
 class Siamese(Cat):
     pass
+if __name__ == "__main__":
+    bengal = Bengal("Benjy",4)
+    chartreux = Chartreux("Charlie",8)
+    siamese = Siamese("Sammy",6)
 
-bengal = Bengal("Benjy",4)
-chartreux = Chartreux("Charlie",8)
-siamese = Siamese("Sammy",6)
+    all_cats = [bengal,chartreux,siamese]
 
-all_cats = [bengal,chartreux,siamese]
-
-sara_pets = Pets(all_cats)
-sara_pets.walk()
+    sara_pets = Pets(all_cats)
+    sara_pets.walk()
 
 #Exercise 2
 class Dog:
@@ -54,18 +54,19 @@ class Dog:
         else:
             print(f"{other_dog.name} won the fight")
 
-tom = Dog("Tom",5,20)
-angela = Dog("Angela",3,15)
-brandy = Dog("Brandy",10,25)
-tom.bark()
-angela.bark()
-brandy.bark()
-tom.run_speed()
-angela.run_speed()
-brandy.run_speed()
-tom.fight(angela)
-brandy.fight(tom)
-angela.fight(brandy)
+if __name__ == "__main__":
+    tom = Dog("Tom",5,20)
+    angela = Dog("Angela",3,15)
+    brandy = Dog("Brandy",10,25)
+    tom.bark()
+    angela.bark()
+    brandy.bark()
+    tom.run_speed()
+    angela.run_speed()
+    brandy.run_speed()
+    tom.fight(angela)
+    brandy.fight(tom)
+    angela.fight(brandy)
 
 
 
