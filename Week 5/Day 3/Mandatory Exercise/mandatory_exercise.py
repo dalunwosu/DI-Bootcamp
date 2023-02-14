@@ -1,5 +1,27 @@
 #Exercise 1
 
+class functions :
+    """This is a function which prints the results of the in-built functions abs(), int() and input() """
+    def built_in_functions(self):
+        num = 5.678787869686989585968688
+        dig = abs(num)
+        print(dig)
+
+        num_string = "1623463737829293947"
+        num_int = int(num_string)
+        print(num_int)
+
+        statement = "My name is Chukwudalu Nwosu, I am 17 years old, I live in Tel Aviv and I am a stduent of Developer's Institute"
+        inp= input(statement)
+        print(inp)
+
+
+functions.built_in_functions(0)
+print(functions.__doc__)
+
+
+
+
 
 #Exercise 2
 class Currency:
