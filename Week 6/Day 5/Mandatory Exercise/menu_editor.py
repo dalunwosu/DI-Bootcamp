@@ -43,10 +43,11 @@ def remove_item_from_menu():
     removal.delete()
     print("Item was removed successfully")
 
-remove_item_from_menu()
+def show_restaurant_menu():
+    name = None
+    price = None
+    menu = MenuItem(name, price)
+    print(menu.all())
 
-
-
-
-
-
+load_manager()
+show_user_menu()

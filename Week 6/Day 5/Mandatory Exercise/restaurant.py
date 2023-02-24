@@ -32,7 +32,7 @@ class MenuItem:
         run_query(query)
 
     def all(self):
-        query = "select * from menu;"
+        query = "select name,price from menu;"
         return run_query(query)
     
     def __repr__(self):
