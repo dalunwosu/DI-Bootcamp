@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family</title>
+</head>
+<body>
+
+    <a href = "{%url 'animals_all'%}"><b>All Animals</b></a> <br>
+    <a href = "{%url 'family_all'%}"><b>All Families</b></a>
+    <h1> {{family.name}} </h1>
+    {%for animal in animals%}
+        <br>
+        <a href="{%url 'animal' animal.id%}"> {{animal.name}} </a>
+        <br>
+    {%endfor%}
+
+    Total animals in this family: {{count}}
+</body>
+</html>
