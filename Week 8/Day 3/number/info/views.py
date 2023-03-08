@@ -2,13 +2,13 @@ from django.shortcuts import render
 from .models import numbers
 
 def phonenumber_info(requests, phonenumber):
-    info_nu = numbers.objects.get(phone_number = int(phonenumber))
-    context = {'personal_info': info_nu}
+    info_nu = numbers.objects.get(phone_number = phonenumber)
+    context = {'name': info_nu}
     
-    return render(requests, 'phonenumber.html',context )
+    return render(requests, 'person.html',context )
 
-def name_info(requests, name):
+def name_info(requests, name: str):
     info_nu = numbers.objects.get(name = name)
     context = {'name': info_nu}
     
-    return render(requests, 'name.html',context )
+    return render(requests, 'person.html',context )
