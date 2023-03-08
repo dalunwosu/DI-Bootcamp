@@ -1,30 +1,44 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
-def some_text(request):
-    """"Shows a text on screen inside browser"""
-    return HttpResponse('SOME TEXT')
-
-def about(request):
-    """"Gives a description about the page"""
-    return HttpResponse('<h1>This is a page about Chukwudalu Nwosu')
+from .models import Post, Addition
 
 def posts(request):
-    author = 'Dalu'
-    title = 'My first post'
-    body = 'Some text about my post etc.'
 
-    context: dict = {'author': author, 'title': title, 'body': body}
+    all_posts = Post.objects.all()
+    context: dict = {'posts': all_posts}
 
-    return render(request, 'posts.html',context)
+    # context - data that goes to html
+    # template - an HTML file
+
+    return render(request, 'posts.html', context)
+
+
+def about(request):
+    out = "<h1> This is a website about my posts </h1>"
+    return HttpResponse(out)
+
+
+def post(request, id:int):
+    post = Post.objects.get(id=id)
+    addon = post.addition
+
+    context = {'post': post, 'addon': addon}
+
+    return render(request, 'post.html', context)
+
+
+
 
 def profile(request):
-    
+
     context = {
-        'name': "Dalu Nwosu",
-        'age': 17,
-        'gender': "M",
-        'hobbies': ['Gaming','Reading','Sports']
+        'name': 'Yossi Eik', 
+        'age': 31,
+        'gender': 'M',
+        'hobbies': ['Python', 'Django', 'Purim']
     }
 
-    return render(request,'profile_user.html',context)
+    return render(request, 'profile_user.html', context)
+
+
+

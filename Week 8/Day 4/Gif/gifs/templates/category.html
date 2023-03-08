@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category</title>
+</head>
+<body>
+    <h1>{{category.name}}</h1><br>
+    {% for gif in gifs %}
+    <ul>Name of Gif: {{gif.title}} </ul>
+    <ul><img src = "{{gif.url}}.gif" alt="gif image"> </ul>
+    <ul>Created by : {{gif.uploader_name}}</ul>
+    <ul>Created at: {{gif.created_at}}</ul>
+    <hr>
+    {% endfor %}
+</body>
+</html>

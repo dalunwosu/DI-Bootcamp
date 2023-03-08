@@ -1,0 +1,9 @@
+- to get into django shell 
+    - python manage.py shell
+
+- To import a model
+    - from <app_name>.models import <model_name>
+    from posts.models import Post
+
+- To get all the model objects / rows
+    - Post.objects.all()
