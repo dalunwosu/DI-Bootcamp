@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Gifs</title>
+</head>
+<body>
+    {% for gif in gifs %}
+
+        <ul>Name of Gif: {{gif.title}} </ul>
+        <ul><img src = "{{gif.url}}" alt="gif image"> </ul>
+        <ul>Created by : {{gif.uploader_name}}</ul>
+        <ul>Created at: {{gif.created_at}}</ul>
+        <hr>
+    
+    {% endfor %}
+    <h3>Add new Gifs here:</h3>
+    <form method="POST">
+        {%csrf_token%}
+        {{form}}
+    <button type="submit">Add Gif</button>
+    </form>
+</body>
+</html>
