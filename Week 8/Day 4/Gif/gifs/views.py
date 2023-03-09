@@ -10,7 +10,7 @@ def homepage(request):
 def category(request, id) :
     
     category = Category.objects.get(id = id)
-    gifs = category.gif.all()
+    gifs =  category.gifs.all()
 
     context = {'category': category, 'gifs': gifs}
 
@@ -27,7 +27,7 @@ def categories(request):
 
 def gifs(request, id):
     gif = Gif.objects.get(id = id)
-    context = {'gif', gif}
+    context = {'gif': gif}
 
     return render(request, 'gifs.html', context)
 

@@ -9,11 +9,11 @@
 <body>
     <h1>{{category.name}}</h1><br>
     {% for gif in gifs %}
-    <ul>Name of Gif: {{gif.title}} </ul>
-    <ul><img src = "{{gif.url}}.gif" alt="gif image"> </ul>
-    <ul>Created by : {{gif.uploader_name}}</ul>
-    <ul>Created at: {{gif.created_at}}</ul>
-    <hr>
+        <ul>Name of Gif: {{gif.title}} </ul>
+        <ul><img src = "{{gif.url}}" alt="gif image"> </ul>
+        <ul>Created by : {{gif.uploader_name}}</ul>
+        <ul>Created at: {{gif.created_at}}</ul>
+        <hr>
     {% endfor %}
 </body>
 </html>

@@ -18,8 +18,8 @@ from django.urls import path
 from gifs.views import homepage,category,categories,gifs
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("homepage", homepage, name="homepage"),
-    path("category/<int:id>", category, name="show_category"),
-    path("categories", categories, name="show_categories"),
-    path("gifs/<int:id>", gifs)
+    path("homepage/", homepage, name="homepage"),
+    path("category/<int:id>/", category, name="show_category"),
+    path("categories/", categories, name="show_categories"),
+    path("gifs/<int:id>/", gifs)
 ]
