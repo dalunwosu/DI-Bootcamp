@@ -13,7 +13,15 @@
         <ul>Name of Gif: {{gif.title}} </ul>
         <ul><img src = "{{gif.url}}" alt="gif image"> </ul>
         <ul>Created by : {{gif.uploader_name}}</ul>
-        <ul>Created at: {{gif.created_at}}</ul>
+        <ul>Created at: {{gif.created_at}}</ul><br>
+        <b> Likes:</b>{{gif.likes}}
+        <br>
+        <form method="get">
+            <button value="{{gif.id}}" name="LIKE" type="submit">LIKE</button>
+        </form>
+        <form method="get">
+            <button value="{{gif.id}}" name="DISLIKE" type="submit">DISLIKE</button>
+        </form>
         <hr>
     
     {% endfor %}

@@ -6,6 +6,13 @@ def homepage(request):
     gifs =  Gif.objects.all() 
     context = {'gifs' : gifs}
 
+    data = request.GET
+    like_id = data.get('LIKE')
+    dislike_id = data.get('DISLIKE')
+    if like_id:
+        add_like(int(like_id))
+    if dislike_id:
+        dislike(int(dislike_id))
     return render(request, 'homepage.html', context)
 
 def category(request, id) :
@@ -43,6 +50,13 @@ def new_category(request):
 
     context = {'form': form, "categories": categories}
 
+    data = request.GET
+    like_id = data.get('LIKE')
+    dislike_id = data.get('DISLIKE')
+    if like_id:
+        add_like(int(like_id))
+    if dislike_id:
+        dislike(int(dislike_id))
     return render (request, 'new_categories.html', context)
 
 def new_gif(request):
@@ -56,6 +70,21 @@ def new_gif(request):
 
     context = {'form': form, 'gifs': gifs}
 
+    data = request.GET
+    like_id = data.get('LIKE')
+    dislike_id = data.get('DISLIKE')
+    if like_id:
+        add_like(int(like_id))
+    if dislike_id:
+        dislike(int(dislike_id))
     return render (request, 'new_gifs.html', context)
 
+def add_like(gif_id: int):
+    gif = Gif.objects.get(id=gif_id)
+    gif.likes += 1
+    gif.save() 
 
+def dislike(gif_id: int):
+    gif = Gif.objects.get(id=gif_id)
+    gif.likes -= 1
+    gif.save() 
