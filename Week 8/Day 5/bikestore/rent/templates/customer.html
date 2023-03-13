@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{customer.first_name}} {{customer.last_name}}</title>
+</head>
+<body>
+    <h1>{{customer.first_name}} {{customer.last_name}}</h1> <hr>
+    <h2>Email: {{customer.email}}</h2>
+    <h2>Phone Number: {{customer.phone_number}}</h2>
+    <h2>Address: {{customer.address}}</h2>
+    {%if customer.city%}
+        <h2>City: {{customer.city}}</h2>
+    {%else%}
+        <h2>City: Not Available</h2>
+    {%endif%}
+    {%if customer.country%}
+        <h2>Country: {{customer.country}}</h2>
+    {%else%}
+        <h2>Country: Not Available</h2>
+    {%endif%}
+</body>
+</html>
