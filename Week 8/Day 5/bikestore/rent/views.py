@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Customer,Vehicle,Rental,RentalRate
 from .forms import CustomerForm, RentalForm, VehicleForm
+from django.views.generic import ListView
 
 def customers(request):
     customers_list = Customer.objects.all().order_by('first_name','last_name')
