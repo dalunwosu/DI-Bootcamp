@@ -1,8 +1,6 @@
 {%extends 'base.html'%}
 {%block content%}
-
-{%for film in films%}
-    <h1><a href="{%url 'film' film.id%}">{{film.title}}</a></h1>
+    <h1>{{film.title}}</h1>
     <h2>Release Date: {{film.release_date}}</h2>
     <h2>Created In: {{film.created_in_country}}</h2>
     <h2>Available in: 
@@ -20,6 +18,9 @@
         {%endfor%}
      </h2>
     <h2>Date Added to Website: {{film.date_added}}</h2>
-    <hr>
-{%endfor%}
+
+    <a href="{%url 'update_film' film.id%}">Update Film</a>               <a href="{%url 'delete_film' film.id%}">Delete Film</a>  <br>
+    {%for director in film.directors.all%}
+    <a href="{%url 'delete_director' director.id%}">Delete Director</a>    <a href="{%url 'update_director' director.id%}">Update Director</a> 
+    {%endfor%}
 {%endblock%}

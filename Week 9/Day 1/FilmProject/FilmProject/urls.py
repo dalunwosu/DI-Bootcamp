@@ -15,11 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from films.views import add_director, addfilm, homepage
+from films.views import add_director, addfilm, homepage, UpdateDirectorView, UpdateFilmView, DeleteDirectorView, DeleteFilmView, film
+from accounts.views import IMDILoginView, IMDILogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('addFilm/', addfilm, name= 'add_film'),
     path('addDirector/',add_director, name='add_director'),
-    path('homepage/', homepage, name='homepage')
+    path('homepage/', homepage, name='homepage'),
+    path('updatefilm/<int:pk>/', UpdateFilmView.as_view(), name='update_film'),
+    path('updatedirector/<int:pk>/', UpdateDirectorView.as_view(), name='update_director'),
+    path('deletefilm/<int:pk>/', DeleteFilmView.as_view(), name='delete_film'),
+    path('deletedirector/<int:pk>/', DeleteDirectorView.as_view(), name='delete_director'),
+    path('film/<int:id>', film, name='film' ),
+    path('login/', IMDILoginView.as_view(), name='login'),
+    path('logout/', IMDILogoutView.as_view(), name='logout')
 ]
