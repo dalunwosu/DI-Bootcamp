@@ -23,7 +23,7 @@ urlpatterns = [
     path('customer/<int:id>/', customer, name='customer'),
     path('addcustomer/', add_customer),
     path('rentals/',rentals, name='rentals'),
-    path('addrental/', add_rental),
+    path('addrental/', add_rental, name='add_rental'),
     path('vehicle/<int:id>/', vehicle, name= 'vehicle' ),
     path('vehicles/', vehicles, name='vehicles' ),
     path('addvehicle/', add_vehicle),

@@ -5,7 +5,11 @@
         Customer: <a href="{%url 'rent' rental.customer_id%}">{{rental.customer}}</a><br>
         Vehicle Rented: {{rental.vehicle}}<br>
         Rental Date: {{rental.rental_date}}<br>
+        {%if rental.return_date%}
         Return Date: {{rental.return_date}}
+    {%else%}
+        Return Date : Vehicle Not Returned yet
+    {%endif%}
         <hr>
     {%endfor%}
 </div>

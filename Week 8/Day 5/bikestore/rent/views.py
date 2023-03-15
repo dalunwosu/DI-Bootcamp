@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Customer,Vehicle,Rental,RentalRate
 from .forms import CustomerForm, RentalForm, VehicleForm
 from django.views.generic import ListView
+
 
 def customers(request):
     customers_list = Customer.objects.all().order_by('first_name','last_name')
@@ -16,7 +17,9 @@ def customer(request, id):
 def add_customer(request):
     if request.method == 'POST':
         form_filled = CustomerForm(request.POST)
-        form_filled.save()
+        if form_filled.is_valid():
+            form_filled.save()
+            return redirect('add_rental')
 
     form = CustomerForm()
     context = {'form': form }
@@ -29,8 +32,10 @@ def rentals(request):
 
 def add_rental(request):
     if request.method == 'POST':
-        form_filled = RentalForm(request.POST)
-        form_filled.save()
+        form = RentalForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('rentals')
 
     form = RentalForm()
     context = {'form': form }
@@ -48,8 +53,10 @@ def vehicle(request, id):
 
 def add_vehicle(request):
     if request.method == 'POST':
-        form_filled = VehicleForm(request.POST)
-        form_filled.save()
+        form = VehicleForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('vehicles')
 
     form = VehicleForm()
     context = {'form': form }
