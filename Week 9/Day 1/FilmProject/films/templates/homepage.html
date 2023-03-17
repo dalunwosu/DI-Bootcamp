@@ -1,22 +1,24 @@
 {%extends 'base.html'%}
 {%block content%}
-
+{%if user.is_authenticated%}
+<h1>All The New Films</h1>
+{%endif%}
 {%for film in films%}
     <h1><a href="{%url 'film' film.id%}">{{film.title}}</a></h1>
     <h2>Release Date: {{film.release_date}}</h2>
     <h2>Created In: {{film.created_in_country}}</h2>
     <h2>Available in: 
     {%for country in film.available_in_countries.all%}
-     {{country}},
+     {{country}}{% if forloop.last %}.{% else %}, {% endif %}
     {%endfor%}</h2>
      <h2>Categories: 
         {%for category in film.categories.all%}
-        {{category}},
+        {{category}}{% if forloop.last %}.{% else %}, {% endif %}
         {%endfor%}
      </h2>
      <h2>Directed By: 
         {%for director in film.directors.all%}
-        {{director}},
+        {{director}}{% if forloop.last %}.{% else %}, {% endif %}
         {%endfor%}
      </h2>
     <h2>Date Added to Website: {{film.date_added}}</h2>

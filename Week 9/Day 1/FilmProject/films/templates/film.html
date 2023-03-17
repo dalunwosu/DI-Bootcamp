@@ -5,22 +5,23 @@
     <h2>Created In: {{film.created_in_country}}</h2>
     <h2>Available in: 
     {%for country in film.available_in_countries.all%}
-     {{country}},
+     {{country}}{% if forloop.last %}.{% else %}, {% endif %}
     {%endfor%}</h2>
      <h2>Categories: 
         {%for category in film.categories.all%}
-        {{category}},
+        {{category}}{% if forloop.last %}.{% else %}, {% endif %}
         {%endfor%}
      </h2>
      <h2>Directed By: 
         {%for director in film.directors.all%}
-        {{director}},
+        {{director}}{% if forloop.last %}.{% else %}, {% endif %}
         {%endfor%}
      </h2>
     <h2>Date Added to Website: {{film.date_added}}</h2>
-
+    {%if user.is_superuser%}
     <a href="{%url 'update_film' film.id%}">Update Film</a>               <a href="{%url 'delete_film' film.id%}">Delete Film</a>  <br>
     {%for director in film.directors.all%}
     <a href="{%url 'delete_director' director.id%}">Delete Director</a>    <a href="{%url 'update_director' director.id%}">Update Director</a> 
     {%endfor%}
+    {%endif%}
 {%endblock%}

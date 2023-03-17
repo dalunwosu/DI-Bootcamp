@@ -49,3 +49,6 @@ class RentalRate(models.Model):
     vehicle_size = models.ForeignKey(VehicleSize, on_delete=models.CASCADE)
     def __str__(self) -> str:
         return f"{self.vehicle_type}, {self.vehicle_size}, {self.daily_rate}"
+    
+# class RentalStation(models.Model):
+#     name = 

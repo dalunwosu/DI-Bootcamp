@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from films.views import add_director, addfilm, homepage, UpdateDirectorView, UpdateFilmView, DeleteDirectorView, DeleteFilmView, film
-from accounts.views import IMDILoginView, IMDILogoutView
+from accounts.views import IMDILoginView, IMDILogoutView, RegisterView, ProfileCreateView, ProfileView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,5 +31,8 @@ urlpatterns = [
     path('deletedirector/<int:pk>/', DeleteDirectorView.as_view(), name='delete_director'),
     path('film/<int:id>', film, name='film' ),
     path('login/', IMDILoginView.as_view(), name='login'),
-    path('logout/', IMDILogoutView.as_view(), name='logout')
-]
+    path('logout/', IMDILogoutView.as_view(), name='logout'),
+    path('register/', RegisterView.as_view(), name='register' ),
+    path('createprofile/', ProfileCreateView.as_view(), name='create_profile'),
+    path('profile/<int:pk>/', ProfileView.as_view(), name='profile')
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

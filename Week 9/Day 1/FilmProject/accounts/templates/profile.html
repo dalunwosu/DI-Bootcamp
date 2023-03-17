@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{%block content%}
+<h1>{{profile.user | capfirst}}'s Profile Page</h1>
+<div style="display: flex; justify-content: center;">
+    <figure>
+      <img src="{{ profile.image.url }}" alt="My Image" height="400px" width="600px">
+    </figure>
+  </div>
+  
+  <div style="display: flex; justify-content: center;">
+    <figcaption style="text-align: center;">
+      <h3>Your Profile Picture</h3>
+    </figcaption>
+  </div><hr>
+  
+<h2>Name: {{profile.user| capfirst}}</h2>
+<h2>Your Favorite Movies: {%for movies in profile.favorite_films.all%}
+  {{ movies.title }}{% if forloop.last %}.{% else %}, {% endif %}
+  {%endfor%}
+</h2>
+
+
+
+{%endblock%}

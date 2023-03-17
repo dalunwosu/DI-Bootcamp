@@ -3,7 +3,10 @@ from django.urls import reverse
 from .forms import AddDirectorForm, AddFilmForm
 from .models import Film,Director
 from django.views.generic.edit import UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def addfilm(request):
     errors = {}
     if request.method == 'POST':
@@ -18,6 +21,7 @@ def addfilm(request):
     context = {'form': form, 'errors':errors }
     return render(request, 'addFilm.html', context)
 
+@login_required
 def add_director(request):
     errors = {}
     if request.method == 'POST':
@@ -39,28 +43,28 @@ def homepage(request):
     context = {"films": film}
     return render(request, 'homepage.html', context)
 
-class UpdateFilmView(UpdateView):
+class UpdateFilmView(LoginRequiredMixin,UpdateView):
     model = Film
     template_name = 'update_film.html'
     fields = '__all__'
     def get_success_url(self) -> str:
         return reverse('homepage')
 
-class UpdateDirectorView(UpdateView):
+class UpdateDirectorView(LoginRequiredMixin,UpdateView):
     model = Director
     template_name = 'update_director.html'
     fields = '__all__'
     def get_success_url(self) -> str:
         return reverse('homepage')
 
-class DeleteFilmView(DeleteView):
+class DeleteFilmView(LoginRequiredMixin,DeleteView):
     model = Film
     template_name = 'delete_film.html'
     fields = '__all__'
     def get_success_url(self) -> str:
         return reverse('homepage')
     
-class DeleteDirectorView(DeleteView):
+class DeleteDirectorView(LoginRequiredMixin,DeleteView):
     model = Director
     template_name = 'delete_director.html'
     fields = '__all__'
