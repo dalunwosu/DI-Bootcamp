@@ -1,3 +1,4 @@
+
 from django.db import models
 from country_list import countries_for_language
 
@@ -33,4 +34,7 @@ class Film(models.Model):
         director_names = ', '.join([director.__str__() for director in self.directors.all()])
         return f"{self.title}, {director_names}, {self.release_date}"
 
-
+class Poster(models.Model):
+    film = models.OneToOneField(Film, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='posters/')
+    explanation_img = models.CharField(max_length=100)

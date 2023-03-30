@@ -1,5 +1,5 @@
 from django import forms
-from .models import Film,Director
+from .models import Film,Director, Poster
 from django.core.exceptions import ValidationError
 
 class AddFilmForm(forms.ModelForm):
@@ -13,6 +13,7 @@ class AddFilmForm(forms.ModelForm):
                        'placeholder': 'Select a date',
                        'type': 'date',
                        }),}
+        
 
 def has_numbers(in_string:str):
     return any(char.isdigit() for char in in_string)

@@ -19,6 +19,16 @@
   {%endfor%}
 </h2>
 
+<h2>Your Favorite Directors: {%for directors in profile.favorite_directors.all%}
+  {{ directors }}{% if forloop.last %}.{% else %}, {% endif %}
+  {%endfor%}
+</h2>
+
+<h2>Your Favorite Categories: {%for categories in profile.favorite_categories.all%}
+  {{ categories }}{% if forloop.last %}.{% else %}, {% endif %}
+  {%endfor%}
+</h2>
+
 
 
 {%endblock%}

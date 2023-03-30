@@ -1,0 +1,145 @@
+{%extends 'base.html'%}
+{%load static%}
+{%load humanize%}
+{%block content%}
+
+<section id="showcase">
+    <div class="container text-center">
+      <div class="home-search p-5">
+        <div class="overlay p-5">
+          <h1 class="display-4 mb-4">
+            Property Searching Just Got So Easy
+          </h1>
+          <p class="lead">Use our powerful search tool to find your dream house based on keywords. Simply enter your desired location, price range, and any specific features or amenities you're looking for, and our search tool will provide you with a comprehensive list of properties that match your criteria. With this tool, you can easily filter and sort your search results to quickly find the perfect home that meets your needs and preferences. Start your search today and discover your next dream home!</p>
+          <div class="search">
+            <form action="{%url 'search'%}">
+              <!-- Form Row 1 -->
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label class="sr-only">Keywords</label>
+                  <input type="text" name="keywords" class="form-control" placeholder="Keyword (Pool, Garage, etc)">
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label class="sr-only">City</label>
+                  <input type="text" name="city" class="form-control" placeholder="City">
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label class="sr-only">State</label>
+                  <select name="state" class="form-control">
+                    <option selected="true" disabled="disabled">State (All)</option>
+                    {%for key,value in state_choices.items%}
+                    <option value="{{key}}">{{value}}</option>
+                    {%endfor%}
+                  </select>
+                </div>
+              </div>
+              <!-- Form Row 2 -->
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label class="sr-only">Bedrooms</label>
+                  <select name="bedrooms" class="form-control">
+                    <option selected="true" disabled="disabled">Bedrooms (All)</option>
+                    {%for key,value in bedroom_choices.items%}
+            <option value="{{key}}">{{value}}</option>
+                  {%endfor%}
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <select name="price" class="form-control" id="type">
+                    <option selected="true" disabled="disabled">Max Price (Any)</option>
+                    {%for key,value in price_choices.items%}
+                  <option value="{{key}}">{{value}}</option>
+                        {%endfor%}
+                  </select>
+                </div>
+              </div>
+              <button class="btn btn-secondary btn-block mt-4" type="submit">Submit form</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Listings -->
+  <section id="listings" class="py-5">
+    <div class="container">
+      <h3 class="text-center mb-3">Latest Listings</h3>
+      <div class="row">
+        <!-- Listing 1 -->
+        {%for listing in listings|slice:":3"%}
+        <!-- Listing 1 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card listing-preview">
+            <img class="card-img-top" src="/listings{{listing.photo_main.url}}" alt="">
+            <div class="card-img-overlay">
+              <h2>
+                <span class="badge badge-secondary text-white">${{ listing.price|intcomma }}</span>
+              </h2>
+            </div>
+            <div class="card-body">
+              <div class="listing-heading text-center">
+                <h4 class="text-primary">{{listing.title}}</h4>
+                <p>
+                  <i class="fas fa-map-marker text-secondary"></i> {{listing.address}}</p>
+              </div>
+              <hr>
+              <div class="row py-2 text-secondary">
+                <div class="col-6">
+                  <i class="fas fa-th-large"></i> Sqft: {{listing.sqft}}</div>
+                <div class="col-6">
+                  <i class="fas fa-car"></i> Garage: {{listing.garage}}</div>
+              </div>
+              <div class="row py-2 text-secondary">
+                <div class="col-6">
+                  <i class="fas fa-bed"></i> Bedrooms: {{listing.bedroom}}</div>
+                <div class="col-6">
+                  <i class="fas fa-bath"></i> Bathrooms: {{listing.bathrooms}}</div>
+              </div>
+              <hr>
+              <div class="row py-2 text-secondary">
+                <div class="col-12">
+                  <i class="fas fa-user"></i> {{listing.realtor}}</div>
+              </div>
+              <div class="row text-secondary pb-2">
+                <div class="col-6">
+                  <i class="fas fa-clock"></i> {{listing.list_date|timesince}}</div>
+              </div>
+              <hr>
+              <a href="{%url 'listing' listing.id%}" class="btn btn-primary btn-block">More Info</a>
+            </div>
+          </div>
+        </div>
+{%endfor%}
+
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-5 bg-secondary text-white">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <i class="fas fa-comment fa-4x mr-4"></i>
+          <hr>
+          <h3>Consulting Services</h3>
+          <p>Our consulting services offer expert advice to improve business operations in areas such as finance, marketing, and operations. Get valuable insights to optimize processes and achieve growth.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="fas fa-home fa-4x mr-4"></i>
+          <hr>
+          <h3>Propery Management</h3>
+          <p>We provide comprehensive property management services, taking care of all the details from finding tenants to handling maintenance. Maximize your investment and minimize your hassle with personalized service.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="fas fa-suitcase fa-4x mr-4"></i>
+          <hr>
+          <h3>Renting & Selling</h3>
+          <p>Let us help you find the right tenant or buyer for your property. We have extensive experience in the real estate market and provide comprehensive support throughout the process. Maximize your real estate investment with our help.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+{%endblock%}

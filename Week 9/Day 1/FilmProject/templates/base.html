@@ -18,7 +18,7 @@
         <p class="col-md-4 mb-0 text-muted">© IMDI Inc</p>
     
         <ul class="nav col-md-4 justify-content-end">
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Homepage</a></li>
+          <li class="nav-item"><a href="{%url 'homepage'%}" class="nav-link px-2 text-muted">Homepage</a></li>
           {%if user.is_superuser%}
           <li class="nav-item"><a href="{%url 'add_film'%}" class="nav-link px-2 text-muted">Add Films</a></li>
           <li class="nav-item"><a href="{%url 'add_director'%}" class="nav-link px-2 text-muted">Add Directors</a></li>
